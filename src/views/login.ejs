@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/head') -%>
+</head>
+
+<body>
+    <%- include('partials/header') -%>
+        <div class="container">
+            <div class="g-0 row justify-content-center align-content-center h-100 mt-5">
+                <div class="card shadow mb-3 d-flex justify-content-center">
+                    <div class="row g-0">
+                        <div class="col-lg-4 d-lg-block d-md-none d-sm-none d-none">
+                            <img src="/images/alexandra-fuller-_8kC6tyFWco-unsplash.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="col-lg-8 col-md-12 d-flex justify-content-center align-items-center">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <h3>Sign in</h3>
+                                </div>
+                                <form class="mt-3 mx-auto w-50">
+                                    <div class="mb-3">
+                                        <input type="email" class="form-control" id="exampleInputEmail1"
+                                            aria-describedby="emailHelp" placeholder="Email">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="password" class="form-control" id="exampleInputPassword1"
+                                            placeholder="Password">
+                                    </div>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary" type="button">Sign in</button>
+                                        <p class="text-center">Don't have an account? Go to <a href="/register"
+                                                class="text-decoration-none">register page</a></p>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%- include('partials/footer') -%>
+</body>
+
+</html>
