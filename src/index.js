@@ -6,12 +6,18 @@ const app = express();
 const PORT = 3000; //default port
 const db = require('./config/db/DBConnect');
 const route = require('./routes/index');
+const expressSession = require('express-session');
+const passport = require('passport');
 
 app.use(express.static(path.join(__dirname, "/public")));
 
 // Set template engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, "views"));
+
+// Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Express body parser
 app.use(express.urlencoded({ extended: true}));
