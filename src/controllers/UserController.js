@@ -1,24 +1,8 @@
 const { validationResult } = require("express-validator");
 const User = require("../models/User");
-const passport = require("passport");
 const bcrypt = require("bcrypt");
+const passport = require("passport");
 class UserController {
-  showLogin(req, res, next) {
-    try {
-      res.render("login");
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
-  showRegister(req, res, next) {
-    try {
-      res.render("register");
-    } catch (err) {
-      next(err);
-    }
-  }
-
   // [POST] /register
   register(req, res, next) {
     try {
@@ -52,12 +36,12 @@ class UserController {
   login(req, res, next) {
     try {
       passport.authenticate('local', {
-        successRedirect: '/',
-        failureRedirect: '/login',
+        successRedirect: `admin`,
+        failureRedirect: '/',
         failureFlash: true
-      })
+      })(req, res, next);
     } catch (err) {
-      next(err);
+      console.log(err);
     }
   }
 }

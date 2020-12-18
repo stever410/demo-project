@@ -17,19 +17,27 @@
                         <div class="col-lg-8 col-md-12 d-flex justify-content-center align-items-center">
                             <div class="card-body">
                                 <div class="text-center">
-                                    <h3>Sign in</h3>
+                                    <% if (messages.error) { %>
+                                        <div class="alert alert-warning alert-dismissible fade show w-50 mx-auto">
+                                            <p>
+                                                <%= messages.error %>
+                                            </p>
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <% } %>
+                                            <h3>Sign in</h3>
                                 </div>
-                                <form class="mt-3 mx-auto w-50">
+                                <form class="mt-3 mx-auto w-50" method="POST" action="/login">
                                     <div class="mb-3">
-                                        <input type="email" class="form-control" id="exampleInputEmail1"
-                                            aria-describedby="emailHelp" placeholder="Email">
+                                        <input type="email" name="email" class="form-control" placeholder="Email">
                                     </div>
                                     <div class="mb-3">
-                                        <input type="password" class="form-control" id="exampleInputPassword1"
+                                        <input type="password" name="password" class="form-control"
                                             placeholder="Password">
                                     </div>
                                     <div class="d-grid gap-2">
-                                        <button class="btn btn-primary" type="button">Sign in</button>
+                                        <button class="btn btn-primary" type="submit">Sign in</button>
                                         <p class="text-center">Don't have an account? Go to <a href="/register"
                                                 class="text-decoration-none">register page</a></p>
                                     </div>
